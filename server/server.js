@@ -23,11 +23,15 @@ app.get('/download', (req, res) => {
         Key: fileName,
     };
 
-    s3.getObject(options)
-        .createReadStream()
-        .on('error', function (err) {
+    s3.getObject(options, (err, data) => {
+        if (err) {
             res.status(500).json({ error: "Error -> " + err });
-        }).pipe(res);
+        } else {
+            // Set Content-Disposition to suggest filename
+            res.setHeader('Content-Disposition', 'attachment; filename=' + fileName);
+            res.send(data.Body);
+        }
+    });
 });
 
 
