@@ -1,6 +1,6 @@
 {
-  "short_name": "Sway's Answers",
-  "name": "Sway's Answers",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
