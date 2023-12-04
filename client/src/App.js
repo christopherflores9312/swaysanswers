@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* Other components */}
-        <DownloadButton S3URL="http://localhost:3001/download" />
+        <DownloadButton S3URL="/download" />
       </header>
     </div>
   );
